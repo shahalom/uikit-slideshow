@@ -1,6 +1,6 @@
 #Bixie UI-kit Slideshow
 
-A simple slideshow for UI-kit
+A simple slideshow for the awesome [UI-kit](https://github.com/uikit/uikit) framework
 
 Usage:
 ```
