@@ -1,0 +1,20 @@
+{
+    "name": "bix-slideshow",
+    "version": "0.0.4",
+    "description": "Grunt voor Bixie Slideshow for UI-kit",
+    "main": "bixslideshow.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Matthijs Alles - Bixie",
+    "license": "GNU/GPL",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Bixie/uikit-slideshow.git"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-copy": "~0.4.1",
+        "grunt-contrib-uglify": "0.1.1rc6"
+    }
+}
