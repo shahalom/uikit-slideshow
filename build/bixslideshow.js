@@ -39,6 +39,8 @@
             //init nav
             this.navList = $('<ul class="uk-dotnav"></ul>').css({
                 position: 'absolute', bottom: '0px'
+            }).on('mouseenter mouseleave', function (e) {
+                $this.blocked = e.type == 'mouseleave';
             });
             //get slides
             this.slides = {};
