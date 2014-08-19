@@ -16,5 +16,13 @@ delay: 	delay for slideshow. Default 5000
 nav:	show dotnav navigation in bottom left corner. Default true
 ```
 
-The slides will fade out. For animations in the slide, use `uk-animation-*` and/or `uk-scrollspy-*` classes.
+The previous slides will fade out, new slides are shown immediatly. For animations in the slide, use `uk-animation-*` and/or `uk-scrollspy-*` classes. Add the `data-uk-observe` attribute to trigger them after slide-changes.
+```
+<div data-bix-slideshow="{delay:7000}" data-uk-observe>
+	<div>...</div>
+	<div>...</div>
+	<div>...</div>
+</div>
+```
 
+Questions, remarks, additions in the [issues](https://github.com/Bixie/uikit-slideshow/issues).
