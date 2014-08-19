@@ -48,6 +48,9 @@
                 $this.navList.append($('<li><a href="#">Slide ' + (i + 1) + '</a></li>').data('bixSlideIndex', i).click(function (e) {
                     e.preventDefault();
                     $this.showSlide($(this).data('bixSlideIndex'));
+                    //restart interval
+                    clearInterval($this.interval);
+                    $this.startShow();
                 }));
                 $this.slides[i] = $(this);
                 i++;
@@ -56,12 +59,10 @@
             this.currentIndex = -1;
             this.count = i;
             this.blocked = false;
-            this.showSlide(0);
+            this.interval = 0;
             //slide it!
-            setInterval(function () {
-                var index = $this.currentIndex < ($this.count - 1) ? $this.currentIndex + 1 : 0;
-                $this.showSlide(index);
-            }, this.options.delay);
+            this.showSlide(0);
+            this.startShow();
             //show nav
             if (this.options.nav) {
                 this.element.append(this.navList);
@@ -70,7 +71,13 @@
             this.element.on('mouseenter mouseleave', function (e) {
                 $this.blocked = e.type == 'mouseenter';
             });
-
+        },
+        startShow: function () {
+            var $this = this;
+            this.interval = setInterval(function () {
+                var index = $this.currentIndex < ($this.count - 1) ? $this.currentIndex + 1 : 0;
+                $this.showSlide(index);
+            }, this.options.delay);
         },
         showSlide: function (index) {
             if (index == this.currentIndex || this.blocked) return;
