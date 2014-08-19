@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bixie UIkit Slideshow Demo</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="vendor/uikit/css/uikit.gradient.min.css">
+    <link rel="stylesheet" href="vendor/uikit/css/addons/uikit.gradient.addons.min.css">
+    <script src="vendor/jquery/jquery-2.1.1.min.js"></script>
+    <script src="vendor/uikit/js/uikit.min.js"></script>
+    <script src="js/bixslideshow.js"></script>
+    <style type="text/css">
+        .bix-bg {background-color: #d9d9d9;}
+        .bix-content {background-color: #f3f3f3;}
+        .bix-wrapper {
+            max-width: 1000px;
+        }
+        .slide-holder {
+            background-color: #a3a3a3;
+            height: 450px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bix-bg">
+    <div class="bix-wrapper uk-container uk-container-center">
+        <a href="http://www.bixie.nl" target="_blank"><img src="images/bixie_breed_150.png" class="uk-align-left uk-margin-top" alt="Bixie" width="150" /></a>
+    </div>
+</div>
+
+<div class="slide-holder">
+    <div class="bix-wrapper uk-container uk-container-center uk-position-relative uk-height-1-1" data-bix-slideshow
+         data-uk-observe>
+
+        <div class="uk-height-1-1 uk-vertical-align uk-text-center-small uk-text-center-medium">
+            <div class="uk-width-1-1 uk-width-medium-1-2 uk-vertical-align-middle">
+                <h1 class="uk-animation-slide-bottom">Text in a slider</h1>
+                <h1 class="uk-margin-top-remove">With animation!</h1>
+                <div class="tm-teaser-text-primary uk-margin-bottom-remove uk-animation-slide-top">
+                    <img src="images/bixie_breed_150.png" alt="Bixie" width="150" /></div>
+                <div class="uk-margin-top">
+                    <a href="#" class="uk-button uk-button-large uk-animation-slide-left">Call to action</a>
+                </div>
+                <img data-uk-scrollspy="{cls:'uk-animation-slide-left', repeat: true, delay: 300}" src="images/bixielogo_paard_1024.png"
+                     height="350" width="350" alt="Bixie" class="uk-visible-large uk-animation-slide-left" style="position: absolute; bottom: 0; right:0;">
+                <img data-uk-scrollspy="{cls:'uk-animation-slide-right', repeat: true}" src="images/uikit.png"
+                     height="153" width="160" alt="Uikit" class="uk-visible-large uk-animation-slide-right" style="position: absolute; bottom: 10px; right: 280px;" />
+            </div>
+        </div>
+
+        <div class="uk-height-1-1 uk-vertical-align uk-text-center-small uk-text-center-medium">
+            <div class="uk-width-1-1 uk-width-medium-1-2 uk-vertical-align-middle">
+                <h2 class="tm-teaser-text-secondary uk-animation-slide-left">Any text<br />Anywhere!</h2>
+                <div class="uk-animation-slide-top uk-margin-top">
+                    <a href="#" class="uk-button uk-button-large uk-button-primary">Button</a>
+                </div>
+                <img data-uk-scrollspy="{cls:'uk-animation-slide-right', repeat: true}" src="images/bixielogo_paard_1024.png"
+                     height="350" width="350" alt="Bixie" class="uk-visible-large uk-animation-slide-right" style="position: absolute; bottom: 0; right: 10px;" />
+            </div>
+        </div>
+
+        <div class="uk-text-center uk-height-1-1 uk-vertical-align uk-text-center-small uk-text-center-medium">
+            <div class="uk-width-1-1 uk-vertical-align-middle">
+                <h1 class="tm-teaser-text-primary uk-text-center"
+                    data-uk-scrollspy="{cls:'uk-animation-slide-left', repeat: true, delay: 900}">Fully responsive,<br /> Thanks to</h1>
+                <div class="uk-margin-top">
+                    <a href="http://getuikit.com/" class="uk-button uk-button-large uk-button-success">Get UIkit</a>
+                </div>
+                <div class="uk-text-center uk-margin-top uk-animation-slide-bottom"
+                     data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: true, delay: 900}"><img src="images/uikit.png" alt="UIkit" width="160" />
+                </div>
+                <h4 class="uk-animation-slide-bottom"
+                    data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: true, delay: 300}">A lightweight and modular front-end framework</h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bix-bg">
+    <div class="bix-wrapper bix-content uk-container uk-container-center ">
+        <h1 class="uk-margin-top">Bixie Slideshow for UIkit</h1>
+        <p>A simple slideshow that uses the UIkit animation classes for animation. The slideshow simply shows and
+        hides the divs that are in the container. UIkit does the rest!</p>
+        <p>Any suggestons, issues or contributions can be made on <a href="https://github.com/Bixie/uikit-slideshow">Github</a></p>
+
+        <h3>Included CSS</h3>
+        <em>For the navigation the addon "Dotnav" is used, so make sure you include that CSS/Less.</em>
+        <pre>
+&lt;link rel="stylesheet" href="vendor/uikit/css/uikit.gradient.min.css"&gt;
+&lt;link rel="stylesheet" href="vendor/uikit/css/addons/uikit.gradient.addons.min.css"&gt;</pre>
+        <small>All other CSS for the demosite is inline in the head.</small>
+        <h3>Included Javascript</h3>
+        <pre>
+&lt;script src="vendor/jquery/jquery-2.1.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="vendor/uikit/js/uikit.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/bixslideshow.js"&gt;&lt;/script&gt;&lt;/code&gt;</pre>
+        <h3>General markup</h3>
+        <em>In this example the container is styled with the <code>uk-container uk-container-center uk-position-relative uk-height-1-1</code> classes.</em>
+       <pre>
+&lt;div class="" data-bix-slideshow data-uk-observe&gt;
+    &lt;div&gt;....&lt;/div&gt;
+    &lt;div&gt;....&lt;/div&gt;
+    &lt;div&gt;....&lt;/div&gt;
+&lt;/div&gt;</pre>
+        <h3>Javascript options</h3>
+        <table class="uk-table uk-table-striped">
+            <thead>
+                <tr>
+                    <th>Option</th>
+                    <th>Possible value</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>delay</code></td>
+                    <td>integer</td>
+                    <td>5000</td>
+                    <td>Delay between slides</td>
+                </tr>
+                <tr>
+                    <td><code>nav</code></td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Show Dotnav-navigation in bottomleft corner</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<div class="bix-bg">
+    <div class="bix-wrapper uk-container uk-container-center uk-text-center">
+       <small>Demo for Slideshow for <a href="http://getuikit.com/" target="_blank">UIkit</a>. By <a href="http://www.bixie.nl" target="_blank">Bixie</a> </small>
+    </div>
+</div>
+<a href="https://github.com/Bixie/uikit-slideshow">
+    <img style="position: absolute; top: 0; left: 0; border: 0;"
+         src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67"
+         alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+
+
+
+</body>
+</html>

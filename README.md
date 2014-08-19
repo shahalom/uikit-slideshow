@@ -2,6 +2,8 @@
 
 A simple slideshow for the awesome [UI-kit](https://github.com/uikit/uikit) framework
 
+Watch the [demo](http://www.bixie.nl/slideshow/).
+
 Usage:
 ```
 <div data-bix-slideshow>
