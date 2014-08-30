@@ -31,7 +31,8 @@
 
         defaults: {
             delay: 5000,
-            nav: true
+            nav: true,
+            switch: 'hide'
         },
 
         init: function () {
@@ -48,9 +49,7 @@
                 $this.navList.append($('<li><a href="#">Slide ' + (i + 1) + '</a></li>').data('bixSlideIndex', i).click(function (e) {
                     e.preventDefault();
                     $this.showSlide($(this).data('bixSlideIndex'));
-                    //restart interval
-                    clearInterval($this.interval);
-                    $this.startShow();
+                    $this.reset();
                 }));
                 $this.slides[i] = $(this);
                 i++;
@@ -62,7 +61,7 @@
             this.interval = 0;
             //slide it!
             this.showSlide(0);
-            this.startShow();
+            this.reset();
             //show nav
             if (this.options.nav) {
                 this.element.append(this.navList);
@@ -72,18 +71,28 @@
                 $this.blocked = e.type == 'mouseenter';
             });
         },
+        reset: function () {
+            //restart interval
+            if (this.interval) clearInterval(this.interval);
+            this.startShow();
+        },
         startShow: function () {
             var $this = this;
             this.interval = setInterval(function () {
-                var index = $this.currentIndex < ($this.count - 1) ? $this.currentIndex + 1 : 0;
-                $this.showSlide(index);
+                $this.navigate(1);
             }, this.options.delay);
+        },
+        navigate: function (dir) {
+            var index = dir > 0 ? this.currentIndex < (this.count - 1) ? this.currentIndex + dir : 0 :
+                this.currentIndex > 0 ? this.currentIndex + dir : this.count;
+            this.showSlide(index);
         },
         showSlide: function (index) {
             if (index == this.currentIndex || this.blocked) return;
-            if (this.currentIndex !== -1) this.slides[this.currentIndex].fadeOut();
+            var switchFunction = this.options.switch == 'fade' ? 'fadeOut' : 'hide';
+            if (this.currentIndex !== -1) this.slides[this.currentIndex].trigger('bix.slideshow.hide')[switchFunction]();
             this.currentIndex = index;
-            this.slides[index].show();
+            this.slides[index].show().trigger('bix.slideshow.visible');
             this.navList.find('li').removeClass('uk-active');
             this.navList.find('li:nth-child(' + (index + 1) + ')').addClass('uk-active');
             //fire scrollspy elements in slide
