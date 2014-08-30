@@ -16,6 +16,7 @@ Options:
 ```
 delay: 	delay for slideshow. Default 5000
 nav:	show dotnav navigation in bottom left corner. Default true
+switch:	Type of effect to use to hide the previous slide, 'hide' or 'fade'. Default 'hide'
 ```
 
 The previous slides will fade out, new slides are shown immediatly. For animations in the slide, use `uk-animation-*` and/or `uk-scrollspy-*` classes. Add the `data-uk-observe` attribute to trigger them after slide-changes.
